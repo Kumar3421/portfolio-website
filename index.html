@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumar Shantanu | Portfolio</title>
+  <meta name="description" content="Official Portfolio of Kumar Shantanu — Computer Science graduate, Software Engineer, and AI/ML enthusiast specializing in Java, Spring Boot, and Salesforce." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kumarshantanu.dev/" />
+  <meta property="og:title" content="Kumar Shantanu | Software Engineer Portfolio" />
+  <meta property="og:description" content="Explore my work in Java, Spring Boot, and Salesforce development. Liquid Glass aesthetic portfolio." />
+  <meta property="og:image" content="assets/kumar_profile.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://kumarshantanu.dev/" />
+  <meta property="twitter:title" content="Kumar Shantanu | Software Engineer Portfolio" />
+  <meta property="twitter:description" content="Explore my work in Java, Spring Boot, and Salesforce development." />
+  <meta property="twitter:image" content="assets/kumar_profile.png" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/base_logo.png" />
+  <link rel="apple-touch-icon" href="assets/base_logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Animated Background -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="gradient-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="brand-logo-stack" style="position: relative; height: 90px; display: inline-flex; align-items: center; margin-right: 15px; transform: scale(1.25); transform-origin: left center; margin-left: 10px;">
+        <img src="assets/base_logo.png" alt="KS Base" style="height: 100%; width: auto; object-fit: contain;" />
+        <img src="assets/flag_layer.png" alt="KS Flag Waves" class="animated-flag" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; object-fit: contain; transform-origin: 75% 65%;" />
+      </div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Kumar <span class="highlight">Shantanu</span></h1>
+        <div class="typewriter-container">
+          <span class="typewriter-prefix">I'm a </span>
+          <span class="typewriter-text" id="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+        <p class="hero-description">
+          Computer Science graduate with expertise in Java, Spring Boot, Salesforce, and MySQL.
+          Passionate about building scalable applications, AI/ML, and Cloud Computing.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <span>Get In Touch</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#experience" class="btn btn-secondary">
+            <span>View My Work</span>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/ks3421" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.github.com/Kumar3421" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:shantanunitw01@gmail.com" class="social-link" aria-label="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 7L2 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/k.shantanu2714/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-ring">
+          <div class="hero-image-container">
+            <img src="assets/profile.png?v=5" alt="Kumar Shantanu" class="hero-image" />
+          </div>
+        </div>
+        <!-- Orbital Tech Satellites (7 Logo Fleet) -->
+        <div class="tech-orb orb-salesforce">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" alt="Salesforce" />
+        </div>
+        <div class="tech-orb orb-java">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" />
+        </div>
+        <div class="tech-orb orb-gcp">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" />
+        </div>
+        <div class="tech-orb orb-python">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+        </div>
+        <div class="tech-orb orb-slack">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg" alt="Slack" />
+        </div>
+        <div class="tech-orb orb-c">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" />
+        </div>
+        <div class="tech-orb orb-spring">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot" />
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">
+        About Me
+      </h2>
+      <div class="glass-card about-card">
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a <strong>Computer Science graduate</strong> from <strong>Kalinga Institute of Industrial Technology</strong> (KIIT), Bhubaneswar, with a B.Tech in Computer Science & Engineering (2020–2024).
+            </p>
+            <p>
+              My expertise spans across <strong>Java, Spring Boot, Salesforce, and MySQL</strong>, along with exposure to <strong>AI/ML and Cloud Computing</strong>. I'm skilled in building scalable applications, workflow automation, and secure systems.
+            </p>
+            <p>
+              I'm passionate about <strong>problem-solving</strong>, data structures, and software development practices, with a focus on delivering efficient, business-driven solutions.
+            </p>
+          </div>
+          <div class="about-details">
+            <div class="detail-item">
+              <div class="detail-icon">🎓</div>
+              <div>
+                <h4>Education</h4>
+                <p>B.Tech, CSE — KIIT, Bhubaneswar</p>
+                <span class="detail-date">2020 – 2024</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">📍</div>
+              <div>
+                <h4>Location</h4>
+                <p>Patna, Bihar, India</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>shantanunitw01@gmail.com</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title">
+        Experience
+      </h2>
+      <div class="timeline">
+        <!-- Experience 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card">
+            <div class="exp-header">
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="assets/revature.jpg" alt="Revature Logo" style="width: 48px; height: 48px; border-radius: 8px; object-fit: cover; background: white;" />
+                <div>
+                  <h3 class="exp-role">Software Engineer Trainee</h3>
+                  <p class="exp-company">Revature Consultancy Services Pvt. Ltd.</p>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-location">📍 Cuttack, Odisha</span>
+                <span class="exp-date">Dec 2025 – Mar 2026</span>
+              </div>
+            </div>
+            <div class="exp-project">
+              <span class="project-label">Project:</span> RevPassword Manager
+              <div class="tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">Maven</span>
+                <span class="tech-tag">Log4j</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Vanilla JS</span>
+              </div>
+            </div>
+            <ul class="exp-details">
+              <li>Developed a <strong>Spring Boot full-stack application</strong> for secure password management with encrypted vaults, RBAC, and 2FA.</li>
+              <li>Designed <strong>MySQL database</strong> with normalized schemas, foreign keys, and ERD documentation.</li>
+              <li>Implemented <strong>AES encryption, BCrypt hashing</strong>, and OTP-based authentication.</li>
+              <li>Built UI using <strong>Spring MVC and Thymeleaf</strong> with search, filtering, and password generation.</li>
+              <li>Applied JUnit testing, Log4J logging, and Git/GitHub version control.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card">
+            <div class="exp-header">
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="assets/bugendaitech.jpg" alt="BugendaiTech Logo" style="width: 48px; height: 48px; border-radius: 8px; object-fit: cover; background: white;" />
+                <div>
+                  <h3 class="exp-role">Salesforce Intern</h3>
+                  <p class="exp-company">BugendaiTech Private Limited</p>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-location">📍 Patna, Bihar (Remote)</span>
+                <span class="exp-date">May 2025 – Sep 2025</span>
+              </div>
+            </div>
+            <div class="exp-project">
+              <span class="project-label">Project:</span> Lead Generation System
+              <div class="tech-tags">
+                <span class="tech-tag">Salesforce</span>
+                <span class="tech-tag">Apex</span>
+                <span class="tech-tag">LWC</span>
+                <span class="tech-tag">SOQL</span>
+              </div>
+            </div>
+            <ul class="exp-details">
+              <li>Developed a Salesforce staffing automation solution, reducing manual effort by <strong>~40%</strong>.</li>
+              <li>Designed end-to-end workflows with cross-functional teams, improving talent-role matching by <strong>~30%</strong>.</li>
+              <li>Automated proposal and pricing models to accelerate client decisions and delivery.</li>
+              <li>Built scalable onboarding and QA frameworks to improve agility and communication.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card">
+            <div class="exp-header">
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="assets/nexusinfo.jpg" alt="Nexus Info Logo" style="width: 48px; height: 48px; border-radius: 8px; object-fit: cover; background: white;" />
+                <div>
+                  <h3 class="exp-role">AI/ML Intern</h3>
+                  <p class="exp-company">Nexus Info</p>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-location">📍 Patna, Bihar (Remote)</span>
+                <span class="exp-date">Jan 2025 – Apr 2025</span>
+              </div>
+            </div>
+            <div class="exp-project">
+              <span class="project-label">Project:</span> Disease Prediction System
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">ML</span>
+              </div>
+            </div>
+            <ul class="exp-details">
+              <li>Cleaned and standardized health data, addressing missing values and outliers.</li>
+              <li>Built models using <strong>Logistic Regression, Decision Trees, Random Forests,</strong> and <strong>SVM</strong>.</li>
+              <li>Optimized hyperparameters and rigorously tested models for accuracy and reliability.</li>
+              <li>Applied <strong>cross-validation</strong> and tuning techniques to prevent overfitting.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">
+        Projects
+      </h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="glass-card project-card">
+          <div class="project-card-header">
+            <div class="project-icon">📊</div>
+
+          </div>
+          <h3 class="project-title">E-Commerce Sales Prediction</h3>
+          <p class="project-description">
+            Built a predictive model for e-commerce sales using Walmart's historical data. Preprocessed data, engineered features to capture seasonal trends, and trained models evaluated via MAE, MSE, and RMSE.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">ML</span>
+            <span class="tech-tag">Data Science</span>
+          </div>
+          <span class="project-date">Jul 2023 – Dec 2023</span>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card project-card">
+          <div class="project-card-header">
+            <div class="project-icon">🔐</div>
+
+          </div>
+          <h3 class="project-title">RevPassword Manager</h3>
+          <p class="project-description">
+            Full-stack secure password management application with encrypted vaults, RBAC, 2FA authentication, AES encryption, and BCrypt hashing. Built with Spring Boot and Thymeleaf.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+          <span class="project-date">Dec 2025 – Mar 2026</span>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card project-card">
+          <div class="project-card-header">
+            <div class="project-icon">🏥</div>
+
+          </div>
+          <h3 class="project-title">Disease Prediction System</h3>
+          <p class="project-description">
+            ML-based health prediction system using patient data to predict diseases. Utilized Logistic Regression, Decision Trees, Random Forests, and SVM with optimized hyperparameters.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+          </div>
+          <span class="project-date">Jan 2025 – Apr 2025</span>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-card project-card">
+          <div class="project-card-header">
+            <div class="project-icon">⚡</div>
+
+          </div>
+          <h3 class="project-title">Lead Generation System</h3>
+          <p class="project-description">
+            Salesforce-based staffing automation solution that reduced manual effort by ~40%. Designed end-to-end workflows, automated proposal and pricing models for improved agility.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Salesforce</span>
+            <span class="tech-tag">Apex</span>
+            <span class="tech-tag">LWC</span>
+          </div>
+          <span class="project-date">May 2025 – Sep 2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">
+        Skills
+      </h2>
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="glass-card skill-chart-card">
+          <h3 class="chart-main-title">Programming Languages</h3>
+          <div class="chart-wrapper">
+            <canvas id="chart-programming"></canvas>
+          </div>
+          <div class="custom-legend">
+            <div class="legend-item"><span class="color-dot" style="background:#00f0ff;"></span>C Programming</div>
+            <div class="legend-item"><span class="color-dot" style="background:#a600ff;"></span>Core Java</div>
+            <div class="legend-item"><span class="color-dot" style="background:#ff007f;"></span>Python Programming</div>
+            <div class="legend-item"><span class="color-dot" style="background:#00ff66;"></span>MySQL</div>
+          </div>
+        </div>
+
+        <!-- Cloud Technologies -->
+        <div class="glass-card skill-chart-card">
+          <h3 class="chart-main-title">Cloud Technologies</h3>
+          <div class="chart-wrapper">
+            <canvas id="chart-cloud"></canvas>
+          </div>
+          <div class="custom-legend">
+            <div class="legend-item"><span class="color-dot" style="background:#00f0ff;"></span>Google Cloud</div>
+            <div class="legend-item"><span class="color-dot" style="background:#a600ff;"></span>AWS</div>
+            <div class="legend-item"><span class="color-dot" style="background:#ff007f;"></span>Salesforce</div>
+            <div class="legend-item"><span class="color-dot" style="background:#00ff66;"></span>ServiceNow</div>
+          </div>
+        </div>
+
+        <!-- Framework/Libraries -->
+        <div class="glass-card skill-chart-card">
+          <h3 class="chart-main-title">Framework/Libraries</h3>
+          <div class="chart-wrapper">
+            <canvas id="chart-frameworks"></canvas>
+          </div>
+          <div class="custom-legend">
+            <div class="legend-item"><span class="color-dot" style="background:#00f0ff;"></span>JQuery</div>
+            <div class="legend-item"><span class="color-dot" style="background:#a600ff;"></span>Spring</div>
+            <div class="legend-item"><span class="color-dot" style="background:#ff007f;"></span>JDBC</div>
+            <div class="legend-item"><span class="color-dot" style="background:#00ff66;"></span>REST APIs</div>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="glass-card skill-chart-card">
+          <h3 class="chart-main-title">DevOps</h3>
+          <div class="chart-wrapper">
+            <canvas id="chart-devops"></canvas>
+          </div>
+          <div class="custom-legend">
+            <div class="legend-item"><span class="color-dot" style="background:#00f0ff;"></span>Git/Github</div>
+            <div class="legend-item"><span class="color-dot" style="background:#a600ff;"></span>Copado</div>
+            <div class="legend-item"><span class="color-dot" style="background:#ff007f;"></span>Postman</div>
+          </div>
+        </div>
+
+        <!-- Technical Tools -->
+        <div class="glass-card skill-chart-card">
+          <h3 class="chart-main-title">Technical Tools</h3>
+          <div class="chart-wrapper">
+            <canvas id="chart-tools"></canvas>
+          </div>
+          <div class="custom-legend">
+            <div class="legend-item"><span class="color-dot" style="background:#00f0ff;"></span>IntelliJ IDEA</div>
+            <div class="legend-item"><span class="color-dot" style="background:#a600ff;"></span>VS Code</div>
+            <div class="legend-item"><span class="color-dot" style="background:#ff007f;"></span>Jupyter Notebook</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <h2 class="section-title">
+        Achievements
+      </h2>
+      <div class="achievements-grid">
+        <div class="glass-card achievement-card">
+          <div class="achievement-icon" style="background: transparent; box-shadow: none; padding: 0; width: 160px; height: auto; margin-bottom: 12px;">
+            <img src="assets/springer_logo2.png" alt="Springer Nature Logo" style="width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));" />
+          </div>
+          <h3>Research Publication</h3>
+          <p>
+            Authored a research paper titled <strong>"Cardiovascular Health Risk Prediction Using Bayesian Predictive Analytics Approach"</strong> published by <em>Springer Nature Link</em>. The paper explores innovative methodologies for predicting cardiovascular health risks using Bayesian analytics, contributing to advancements in medical data analysis and predictive healthcare.
+          </p>
+          <a href="https://link.springer.com/chapter/10.1007/978-981-97-6318-4_4" target="_blank" rel="noopener noreferrer" class="achievement-link">View Publication →</a>
+        </div>
+        <div class="glass-card achievement-card">
+          <div class="achievement-icon" style="background: transparent; box-shadow: none; padding: 0; width: 160px; height: auto; margin-bottom: 12px;">
+            <img src="assets/all_star_ranger.png" alt="All Star Ranger Badge" style="width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));" />
+          </div>
+          <h3>Salesforce Trailhead</h3>
+          <p>
+            Achieved <strong>All Star Ranger Rank</strong> on Salesforce Trailhead Platform, demonstrating deep expertise and commitment to the Salesforce ecosystem through continuous learning and hands-on practice.
+          </p>
+          <a href="https://www.salesforce.com/trailblazer/kumarshantanu3421" target="_blank" rel="noopener noreferrer" class="achievement-link">View Trailhead Profile →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">
+        Get In Touch
+      </h2>
+      <div class="glass-card contact-card">
+        <div class="contact-info">
+          <h3>Let's Work Together</h3>
+          <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+          <div class="contact-details">
+            <a href="mailto:shantanunitw01@gmail.com" class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 7L2 7"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">shantanunitw01@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ks3421" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/ks3421</span>
+              </div>
+            </a>
+            <a href="https://www.github.com/Kumar3421" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/Kumar3421</span>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/k.shantanu2714/" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <div>
+                <span class="contact-label">Instagram</span>
+                <span class="contact-value">instagram.com/k.shantanu2714/</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Patna, Bihar, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>Designed & Built by <strong>Kumar Shantanu</strong></p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/ks3421" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.github.com/Kumar3421" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.instagram.com/k.shantanu2714/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="mailto:shantanunitw01@gmail.com" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 7L2 7"/></svg>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Kumar Shantanu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Settings Button & Modal -->
+  <button class="settings-btn" id="settings-toggle" aria-label="Settings">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+  </button>
+
+  <div class="settings-modal" id="settings-modal">
+    <h3 class="settings-header">Appearance</h3>
+    <div class="settings-row">
+      <span>Light Mode</span>
+      <div class="ios-toggle" id="theme-toggle"></div>
+    </div>
+    <div class="settings-row">
+      <span>Animations</span>
+      <div class="ios-toggle active" id="animation-toggle"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
