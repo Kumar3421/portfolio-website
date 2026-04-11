@@ -410,18 +410,35 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.classList.add('active');
   }
 
-  themeToggle.addEventListener('click', () => {
+  const updateThemeAria = (isActive) => {
+    themeToggle.setAttribute('aria-checked', isActive);
+  };
+
+  const toggleTheme = () => {
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     if (isLight) {
       document.documentElement.removeAttribute('data-theme');
       localStorage.setItem('theme', 'dark');
       themeToggle.classList.remove('active');
+      updateThemeAria(false);
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
       themeToggle.classList.add('active');
+      updateThemeAria(true);
+    }
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+  themeToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleTheme();
     }
   });
+
+  // Init Aria
+  updateThemeAria(themeToggle.classList.contains('active'));
 
   // --- ANIMATION LOGIC ---
   const animationsEnabled = localStorage.getItem('animations') !== 'false';
@@ -433,20 +450,37 @@ document.addEventListener('DOMContentLoaded', () => {
     window.DISABLE_ANIMATIONS = false;
   }
 
-  animToggle.addEventListener('click', () => {
+  const updateAnimAria = (isActive) => {
+    animToggle.setAttribute('aria-checked', isActive);
+  };
+
+  const toggleAnimations = () => {
     const isActive = animToggle.classList.contains('active');
     if (isActive) {
       animToggle.classList.remove('active');
       localStorage.setItem('animations', 'false');
       document.documentElement.setAttribute('data-animations', 'false');
       window.DISABLE_ANIMATIONS = true;
+      updateAnimAria(false);
       alert('Animations disabled. Refresh the page to fully apply.');
     } else {
       animToggle.classList.add('active');
       localStorage.setItem('animations', 'true');
       document.documentElement.removeAttribute('data-animations');
       window.DISABLE_ANIMATIONS = false;
+      updateAnimAria(true);
       alert('Animations enabled. Refresh the page to fully apply.');
     }
+  };
+
+  animToggle.addEventListener('click', toggleAnimations);
+  animToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleAnimations();
+    }
   });
+
+  // Init Aria
+  updateAnimAria(animToggle.classList.contains('active'));
 });
