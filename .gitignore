@@ -1,0 +1,30 @@
+# Build artifacts
+dist/
+build/
+.next/
+out/
+bin/
+obj/
+
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Environment variables
+.env
+*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Credentials
+*.pem
+*.key
+auth.json
