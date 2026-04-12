@@ -1,4 +1,4 @@
-# Kumar Shantanu | Apple Liquid Glass Portfolio
+# Kumar Shantanu | Portfolio
 
 A high-performance, premium personal portfolio website featuring an **Apple Liquid Glass** design aesthetic. This project showcases software engineering expertise with a focus on Java, Spring Boot, Salesforce, and AI/ML.
 
