@@ -2,42 +2,42 @@
    DESIGN TOKENS
    ============================================ */
 :root {
-  /* Colors - Liquid Dark Frost */
-  --bg-primary: #0a0e1a;
-  --bg-secondary: #0f1525;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-bg-hover: rgba(255, 255, 255, 0.07);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-border-hover: rgba(255, 255, 255, 0.2);
-  --glass-inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
-  --nav-bg-scrolled: rgba(10, 14, 26, 0.75);
+  /* Colors - Premium Liquid Dark Frost */
+  --bg-primary: #05080f;
+  --bg-secondary: #0a0e1a;
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+  --glass-inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  --nav-bg-scrolled: rgba(5, 8, 15, 0.8);
   --text-primary: #f5f5f7;
-  --text-secondary: rgba(245, 245, 247, 0.7);
-  --text-muted: rgba(245, 245, 247, 0.45);
+  --text-secondary: rgba(245, 245, 247, 0.65);
+  --text-muted: rgba(245, 245, 247, 0.4);
   --accent-1: #00f0ff;
-  --accent-2: #a600ff;
+  --accent-2: #7000ff;
   --accent-3: #448aff;
-  --accent-gradient: linear-gradient(135deg, #00f0ff, #a600ff);
-  --accent-gradient-2: linear-gradient(135deg, #a600ff, #448aff);
+  --accent-gradient: linear-gradient(135deg, #00f0ff, #7000ff);
+  --accent-gradient-2: linear-gradient(135deg, #7000ff, #448aff);
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, sans-serif;
   --font-body: 'Inter', -apple-system, sans-serif;
 
   /* Spacing */
-  --section-padding: 100px 0;
-  --container-width: 1140px;
-  --border-radius: 32px;
-  --border-radius-sm: 16px;
+  --section-padding: 120px 0;
+  --container-width: 1200px;
+  --border-radius: 40px;
+  --border-radius-sm: 20px;
 
-  /* Liquid Glass Core - Enhanced */
-  --glass-blur: 40px;
-  --glass-saturation: 200%;
+  /* Liquid Glass Core - Ultimate Blur */
+  --glass-blur: 50px;
+  --glass-saturation: 220%;
 
-  /* Fluid Spring Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-  --transition-medium: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  --transition-slow: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  /* Fluid Transitions - Feather Light */
+  --transition-fast: 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-medium: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-slow: 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 [data-theme="light"] {
@@ -70,6 +70,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -77,10 +78,11 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
-  line-height: 1.7;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.4s ease, color 0.4s ease;
-  will-change: background-color, color;
+  font-weight: 400;
 }
 
 a {
@@ -129,55 +131,61 @@ img {
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
-  animation: float 20s ease-in-out infinite;
+  filter: blur(100px);
+  opacity: 0.25;
+  animation: float 25s ease-in-out infinite, liquidFlow 15s ease-in-out infinite;
+  mix-blend-mode: screen;
 }
 
 .orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(100, 255, 218, 0.4), transparent 70%);
-  top: -10%;
-  right: -5%;
-  animation-duration: 25s;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.3), transparent 75%);
+  top: -20%;
+  right: -10%;
+  animation-duration: 30s;
 }
 
 .orb-2 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(124, 77, 255, 0.35), transparent 70%);
-  bottom: -15%;
-  left: -10%;
-  animation-duration: 30s;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.25), transparent 75%);
+  bottom: -20%;
+  left: -15%;
+  animation-duration: 35s;
   animation-delay: -5s;
 }
 
 .orb-3 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(68, 138, 255, 0.3), transparent 70%);
-  top: 40%;
-  left: 50%;
-  animation-duration: 22s;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(68, 138, 255, 0.2), transparent 75%);
+  top: 30%;
+  left: 40%;
+  animation-duration: 25s;
   animation-delay: -10s;
 }
 
 .orb-4 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(100, 255, 218, 0.25), transparent 70%);
-  bottom: 20%;
-  right: 20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.2), transparent 75%);
+  bottom: 10%;
+  right: 15%;
   animation-duration: 28s;
   animation-delay: -15s;
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(50px, -80px) scale(1.1); }
-  50% { transform: translate(-30px, 60px) scale(0.95); }
-  75% { transform: translate(70px, 30px) scale(1.05); }
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(60px, -100px) scale(1.2) rotate(5deg); }
+  50% { transform: translate(-40px, 80px) scale(0.9) rotate(-5deg); }
+  75% { transform: translate(90px, 40px) scale(1.1) rotate(3deg); }
+}
+
+@keyframes liquidFlow {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
 }
 
 /* ============================================
@@ -199,19 +207,47 @@ img {
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
   border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-inner-glow), 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    var(--glass-inner-glow),
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius);
-  padding: 36px;
+  padding: 40px;
   transition: all var(--transition-medium);
-  transform: translateZ(0); /* Hardware acceleration */
+  transform: translateZ(0);
   will-change: transform, background, border-color, box-shadow;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.glass-card:hover::before {
+  left: 100%;
 }
 
 .glass-card:hover {
   background: var(--glass-bg-hover);
   border-color: var(--glass-border-hover);
-  transform: translateY(-6px) translateZ(0) scale(1.01);
-  box-shadow: var(--glass-inner-glow), 0 30px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    var(--glass-inner-glow),
+    0 30px 60px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(0, 240, 255, 0.1);
 }
 
 /* ============================================
@@ -377,6 +413,13 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: relative;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
 }
 
 .typewriter-container {
@@ -508,22 +551,26 @@ img {
 }
 
 .hero-image-ring {
-  width: 340px;
-  height: 340px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
-  padding: 4px;
+  padding: 8px;
   background: var(--accent-gradient);
   position: relative;
-  animation: pulse-ring 4s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.15);
+  animation: pulse-ring 6s ease-in-out infinite;
 }
 
 .hero-image-ring::before {
   content: '';
   position: absolute;
-  inset: -8px;
+  inset: -12px;
   border-radius: 50%;
-  border: 2px dashed rgba(100, 255, 218, 0.2);
-  animation: spin 30s linear infinite;
+  border: 1.5px solid rgba(0, 240, 255, 0.1);
+  animation: spin 40s linear infinite;
 }
 
 .hero-image-container {
@@ -532,6 +579,8 @@ img {
   border-radius: 50%;
   overflow: hidden;
   background: var(--bg-secondary);
+  border: 4px solid rgba(255, 255, 255, 0.05);
+  position: relative;
 }
 
 .hero-image {
@@ -1701,106 +1750,91 @@ html[data-animations="false"] .scroll-indicator {
 }
 
 /* ============================================
-   ORBITAL TECH SATELLITES
+   ORBITAL TECH SATELLITES (RESTRUCTURED)
    ============================================ */
+.tech-orb-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
 .tech-orb {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(200%);
-  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  backdrop-filter: blur(20px) saturate(220%);
+  -webkit-backdrop-filter: blur(20px) saturate(220%);
   border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-inner-glow), 0 8px 32px rgba(0,0,0,0.3);
-  z-index: 10;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--glass-inner-glow), 0 10px 40px rgba(0,0,0,0.4);
+  transform: translate(-50%, -50%); /* Center the orb on its orbit position */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .tech-orb img {
-  width: 60%;
-  height: 60%;
+  width: 55%;
+  height: 55%;
   object-fit: contain;
+  transition: transform 0.4s var(--transition-medium);
 }
 
 .tech-orb:hover {
-  transform: scale(1.15) translateY(-5px) !important;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%) scale(1.25);
+  background: var(--glass-bg-hover);
+  border-color: var(--accent-1);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.2), var(--glass-inner-glow), 0 15px 50px rgba(0,0,0,0.5);
   z-index: 20;
 }
 
-/* Positions are now based on a central pivot point */
-.tech-orb {
-  top: 50%;
-  left: 50%;
-  margin-top: -30px; /* half of height */
-  margin-left: -30px; /* half of width */
+.tech-orb:hover img {
+  transform: scale(1.1);
 }
 
-/* Uniform orbital track for an "ordered" following effect (7 Logo Sync) */
-.orb-salesforce {
-  --radius: 240px;
-  --speed: 30s;
+/* Orbit Track Configurations */
+.orb-salesforce { --radius: 260px; --speed: 35s; --delay: 0s; }
+.orb-java       { --radius: 260px; --speed: 35s; --delay: -5s; }
+.orb-gcp        { --radius: 260px; --speed: 35s; --delay: -10s; }
+.orb-python     { --radius: 260px; --speed: 35s; --delay: -15s; }
+.orb-slack      { --radius: 260px; --speed: 35s; --delay: -20s; }
+.orb-mysql      { --radius: 260px; --speed: 35s; --delay: -25s; }
+.orb-spring     { --radius: 260px; --speed: 35s; --delay: -30s; }
+
+.tech-orb-orbit {
   animation: orbit var(--speed) linear infinite;
-  animation-delay: 0s;
+  animation-delay: var(--delay);
 }
 
-.orb-java {
-  --radius: 240px;
-  --speed: 30s;
-  animation: orbit var(--speed) linear infinite;
-  animation-delay: -4.28s; 
-}
-
-.orb-gcp {
-  --radius: 240px;
-  --speed: 30s;
-  animation: orbit var(--speed) linear infinite;
-  animation-delay: -8.57s; 
-}
-
-.orb-python {
-  --radius: 240px;
-  --speed: 30s;
-  animation: orbit var(--speed) linear infinite;
-  animation-delay: -12.85s; 
-}
-
-.orb-slack {
-  --radius: 240px;
-  --speed: 30s;
-  animation: orbit var(--speed) linear infinite;
-  animation-delay: -17.14s; 
-}
-
-.orb-c {
-  --radius: 240px;
-  --speed: 30s;
-  animation: orbit var(--speed) linear infinite;
-  animation-delay: -21.42s; 
-}
-
-.orb-spring {
-  --radius: 240px;
-  --speed: 30s;
-  animation: orbit var(--speed) linear infinite;
-  animation-delay: -25.71s; 
+/* Counter-rotation for the orb itself so icons stay upright */
+.tech-orb-orbit .tech-orb {
+  animation: counter-orbit var(--speed) linear infinite;
+  animation-delay: var(--delay);
 }
 
 @keyframes orbit {
-  from {
-    transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
-  }
+  from { transform: rotate(0deg) translateX(var(--radius)); }
+  to { transform: rotate(360deg) translateX(var(--radius)); }
+}
+
+@keyframes counter-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
 /* Obey the animation kill-switch preferences */
+html[data-animations="false"] .tech-orb-orbit,
 html[data-animations="false"] .tech-orb {
   animation: none !important;
-  transform: none !important;
 }
+
+html[data-animations="false"] .tech-orb {
+  position: static;
+  margin: 10px;
+}
+

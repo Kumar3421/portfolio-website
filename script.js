@@ -194,14 +194,21 @@ function initTypewriter() {
 // ============================================
 function initScrollReveal() {
   const revealElements = document.querySelectorAll(
-    '.glass-card, .timeline-item, .section-title, .project-card, .skill-category, .achievement-card'
+    '.glass-card, .timeline-item, .section-title, .project-card, .skill-chart-card, .achievement-card'
   );
 
-  revealElements.forEach(el => {
+  revealElements.forEach((el, index) => {
     if (!el.classList.contains('about-card')) {
       el.classList.add('reveal');
+      // Staggered reveal delay
+      el.style.transitionDelay = `${(index % 3) * 0.15}s`;
     }
   });
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
+  };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -209,12 +216,19 @@ function initScrollReveal() {
         entry.target.classList.add('visible');
       }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  });
+  }, observerOptions);
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // --- Background Parallax ---
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const orbs = document.querySelectorAll('.orb');
+    orbs.forEach((orb, index) => {
+      const speed = 0.05 + (index * 0.02);
+      orb.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  }, { passive: true });
 }
 
 // ============================================
@@ -313,9 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
   new Chart(document.getElementById('chart-programming'), {
     type: 'doughnut',
     data: {
-      labels: ['C Programming', 'Core Java', 'Python Programming', 'MySQL'],
+      labels: ['MySQL', 'Core Java', 'Python Programming', 'Spring Boot'],
       datasets: [{
-        data: [3, 3, 2, 3],
+        data: [4, 4, 3, 4],
         backgroundColor: colors,
         hoverOffset: 15
       }]
