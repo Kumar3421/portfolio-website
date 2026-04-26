@@ -31,6 +31,10 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <!-- Liquid Cursor -->
+  <div class="cursor-outer"></div>
+  <div class="cursor-inner"></div>
+
   <!-- Liquid Progress Bar -->
   <div id="progress-container">
     <div id="progress-bar"></div>
@@ -39,10 +43,10 @@
   <!-- Animated Background -->
   <canvas id="particles-canvas"></canvas>
   <div class="gradient-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
+    <div class="orb orb-1 watery-effect"></div>
+    <div class="orb orb-2 watery-effect"></div>
+    <div class="orb orb-3 watery-effect"></div>
+    <div class="orb orb-4 watery-effect"></div>
   </div>
 
   <!-- Navigation -->
@@ -623,6 +627,18 @@
       <div class="ios-toggle active" id="animation-toggle" role="switch" aria-checked="true" tabindex="0"></div>
     </div>
   </div>
+
+  <!-- SVG Liquid Filter -->
+  <svg style="display: none;">
+    <defs>
+      <filter id="liquid-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" result="warp">
+          <animate attributeName="baseFrequency" from="0.01 0.01" to="0.02 0.02" dur="10s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+      </filter>
+    </defs>
+  </svg>
 
   <script src="script.js"></script>
 </body>

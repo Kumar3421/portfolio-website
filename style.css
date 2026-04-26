@@ -67,6 +67,38 @@
   box-sizing: border-box;
 }
 
+/* Liquid Cursor */
+.cursor-outer {
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--accent-1);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out, border 0.3s ease, opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.cursor-inner {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-1);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, .nav-link, .btn, .social-link, .tech-orb { cursor: none; }
+}
+
 #progress-container {
   position: fixed;
   top: 0;
@@ -153,6 +185,13 @@ img {
   opacity: 0.25;
   animation: float 25s ease-in-out infinite, liquidFlow 15s ease-in-out infinite;
   mix-blend-mode: screen;
+  will-change: transform, border-radius;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+/* SVG Liquid Filter */
+.watery-effect {
+  filter: url(#liquid-filter);
 }
 
 .orb-1 {
@@ -233,7 +272,7 @@ img {
   padding: 40px;
   transition: all var(--transition-medium);
   transform: translateZ(0);
-  will-change: transform, background, border-color, box-shadow;
+  will-change: transform, opacity, backdrop-filter;
   position: relative;
   overflow: hidden;
 }
@@ -295,6 +334,8 @@ img {
   z-index: 1000;
   transition: all var(--transition-medium);
   backdrop-filter: blur(0px);
+  will-change: padding, background, backdrop-filter;
+  transform: translateZ(0);
 }
 
 .navbar.scrolled {

@@ -65,7 +65,7 @@ function initParticles() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(100, 255, 218, ${this.opacity})`;
+      ctx.fillStyle = `rgba(0, 240, 255, ${this.opacity})`;
       ctx.fill();
     }
   }
@@ -88,7 +88,7 @@ function initParticles() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(100, 255, 218, ${opacity})`;
+          ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -220,23 +220,60 @@ function initScrollReveal() {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // --- Magnetic Effect ---
-  const magneticElements = document.querySelectorAll('.glass-card, .btn, .nav-link, .hero-image-ring, .tech-orb');
-  magneticElements.forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const multiplier = el.classList.contains('tech-orb') ? 0.3 : 0.15;
-      el.style.transform = `translate(${x * multiplier}px, ${y * multiplier}px) scale(1.05)`;
-    });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = '';
-    });
+  // --- Liquid Cursor ---
+  const cursorOuter = document.querySelector('.cursor-outer');
+  const cursorInner = document.querySelector('.cursor-inner');
+  
+  window.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    
+    if (cursorInner && cursorOuter) {
+      cursorInner.style.left = x + 'px';
+      cursorInner.style.top = y + 'px';
+      cursorInner.style.opacity = '1';
+      
+      // Outer cursor with slight delay
+      setTimeout(() => {
+        cursorOuter.style.left = x + 'px';
+        cursorOuter.style.top = y + 'px';
+        cursorOuter.style.opacity = '1';
+      }, 50);
+    }
+
+    // Hover interactions
+    const target = e.target;
+    if (target.closest('a, button, .nav-link, .btn, .social-link, .tech-orb')) {
+      cursorOuter.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      cursorOuter.style.borderColor = 'var(--accent-2)';
+      cursorInner.style.transform = 'translate(-50%, -50%) scale(0)';
+    } else {
+      cursorOuter.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursorOuter.style.borderColor = 'var(--accent-1)';
+      cursorInner.style.transform = 'translate(-50%, -50%) scale(1)';
+    }
   });
 
-  // --- Background Parallax ---
+  window.addEventListener('mousedown', () => {
+    cursorOuter.style.transform = 'translate(-50%, -50%) scale(0.8)';
+  });
+  window.addEventListener('mouseup', () => {
+    cursorOuter.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+
+  // --- Smooth Scroll Updates with RAF ---
+  let ticking = false;
   window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateSmoothElements();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  function updateSmoothElements() {
     const scrollY = window.scrollY;
     
     // Progress Bar
@@ -246,12 +283,13 @@ function initScrollReveal() {
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) progressBar.style.width = scrolled + '%';
 
+    // Parallax
     const orbs = document.querySelectorAll('.orb');
     orbs.forEach((orb, index) => {
       const speed = 0.05 + (index * 0.02);
-      orb.style.transform = `translateY(${scrollY * speed}px)`;
+      orb.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`; // translate3d for acceleration
     });
-  }, { passive: true });
+  }
 }
 
 // ============================================
