@@ -594,7 +594,7 @@ img {
   margin: auto;
   display: block;
   mix-blend-mode: multiply;
-  filter: brightness(1.1) contrast(1.1);
+  filter: grayscale(0.3) brightness(0.85) contrast(1.1);
 }
 
 @keyframes pulse-ring {
