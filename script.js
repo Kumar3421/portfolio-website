@@ -220,9 +220,32 @@ function initScrollReveal() {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // --- Magnetic Effect ---
+  const magneticElements = document.querySelectorAll('.glass-card, .btn, .nav-link, .hero-image-ring, .tech-orb');
+  magneticElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const multiplier = el.classList.contains('tech-orb') ? 0.3 : 0.15;
+      el.style.transform = `translate(${x * multiplier}px, ${y * multiplier}px) scale(1.05)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+    });
+  });
+
   // --- Background Parallax ---
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+    
+    // Progress Bar
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = scrolled + '%';
+
     const orbs = document.querySelectorAll('.orb');
     orbs.forEach((orb, index) => {
       const speed = 0.05 + (index * 0.02);
