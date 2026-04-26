@@ -581,12 +581,18 @@ img {
   background: var(--bg-secondary);
   border: 4px solid rgba(255, 255, 255, 0.05);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image {
-  width: 100%;
-  height: 100%;
+  width: 92%;
+  height: 92%;
   object-fit: cover;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
 }
 
 @keyframes pulse-ring {
